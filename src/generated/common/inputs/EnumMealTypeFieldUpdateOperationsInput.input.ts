@@ -1,8 +1,8 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { MealType } from "../enums";
+import { MealType } from "@prisma/client";
 
-@NestJsGraphQL.InputType('EnumMealTypeFieldUpdateOperationsInput', { isAbstract: true })
+@NestJsGraphQL.InputType("EnumMealTypeFieldUpdateOperationsInput", { isAbstract: true })
 export class EnumMealTypeFieldUpdateOperationsInput {
-  @NestJsGraphQL.Field(() => MealType, { nullable: true })
-  set?: "breakfast" | "lunch" | "dinner" | "night" | undefined;
+  @NestJsGraphQL.Field(() => String, { nullable: true })
+  set?: MealType | undefined;
 }

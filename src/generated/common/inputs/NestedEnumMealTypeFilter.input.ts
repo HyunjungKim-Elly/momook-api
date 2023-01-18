@@ -1,15 +1,15 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { MealType } from "../enums";
+import { MealType } from "@prisma/client";
 
-@NestJsGraphQL.InputType('NestedEnumMealTypeFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("NestedEnumMealTypeFilter", { isAbstract: true })
 export class NestedEnumMealTypeFilter {
-  @NestJsGraphQL.Field(() => MealType, { nullable: true })
+  @NestJsGraphQL.Field(() => String, { nullable: true })
   equals?: "breakfast" | "lunch" | "dinner" | "night" | undefined;
 
-  @NestJsGraphQL.Field(() => [MealType], { nullable: true })
+  @NestJsGraphQL.Field(() => [String], { nullable: true })
   in?: Array<"breakfast" | "lunch" | "dinner" | "night"> | undefined;
 
-  @NestJsGraphQL.Field(() => [MealType], { nullable: true })
+  @NestJsGraphQL.Field(() => [String], { nullable: true })
   notIn?: Array<"breakfast" | "lunch" | "dinner" | "night"> | undefined;
 
   @NestJsGraphQL.Field(() => NestedEnumMealTypeFilter, { nullable: true })

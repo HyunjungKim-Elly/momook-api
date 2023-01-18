@@ -6,7 +6,7 @@ import { StampCountAggregate } from "./StampCountAggregate.output";
 import { StampMaxAggregate } from "./StampMaxAggregate.output";
 import { StampMinAggregate } from "./StampMinAggregate.output";
 
-@NestJsGraphQL.ObjectType('StampGroupBy', { isAbstract: true })
+@NestJsGraphQL.ObjectType("StampGroupBy", { isAbstract: true })
 export class StampGroupBy {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int)
   id!: number;
@@ -14,10 +14,10 @@ export class StampGroupBy {
   @NestJsGraphQL.Field(() => String)
   count!: string;
 
-  @NestJsGraphQL.Field(() => MealType)
+  @NestJsGraphQL.Field(() => String)
   mealType!: "breakfast" | "lunch" | "dinner" | "night";
 
-  @NestJsGraphQL.Field(() => ErrorType)
+  @NestJsGraphQL.Field(() => String)
   errorType!: "notFound" | "alreadyExists";
 
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })

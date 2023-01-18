@@ -1,7 +1,7 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
 import { NestedIntNullableFilter } from "./NestedIntNullableFilter.input";
 
-@NestJsGraphQL.InputType('IntNullableFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("IntNullableFilter", { isAbstract: true })
 export class IntNullableFilter {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })
   equals?: number | undefined;

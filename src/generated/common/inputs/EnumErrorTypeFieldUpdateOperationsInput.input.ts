@@ -1,8 +1,8 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { ErrorType } from "../enums";
+import { ErrorType } from "@prisma/client";
 
-@NestJsGraphQL.InputType('EnumErrorTypeFieldUpdateOperationsInput', { isAbstract: true })
+@NestJsGraphQL.InputType("EnumErrorTypeFieldUpdateOperationsInput", { isAbstract: true })
 export class EnumErrorTypeFieldUpdateOperationsInput {
-  @NestJsGraphQL.Field(() => ErrorType, { nullable: true })
+  @NestJsGraphQL.Field(() => String, { nullable: true })
   set?: "notFound" | "alreadyExists" | undefined;
 }

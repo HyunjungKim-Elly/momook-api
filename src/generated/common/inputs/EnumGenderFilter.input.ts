@@ -1,17 +1,17 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { Gender } from "../enums";
 import { NestedEnumGenderFilter } from "./NestedEnumGenderFilter.input";
+import { Gender } from "@prisma/client";
 
-@NestJsGraphQL.InputType('EnumGenderFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("EnumGenderFilter", { isAbstract: true })
 export class EnumGenderFilter {
-  @NestJsGraphQL.Field(() => Gender, { nullable: true })
-  equals?: "man" | "woman" | undefined;
+  @NestJsGraphQL.Field(() => String, { nullable: true })
+  equals?: Gender | undefined;
 
-  @NestJsGraphQL.Field(() => [Gender], { nullable: true })
-  in?: Array<"man" | "woman"> | undefined;
+  @NestJsGraphQL.Field(() => [String], { nullable: true })
+  in?: Array<Gender> | undefined;
 
-  @NestJsGraphQL.Field(() => [Gender], { nullable: true })
-  notIn?: Array<"man" | "woman"> | undefined;
+  @NestJsGraphQL.Field(() => [String], { nullable: true })
+  notIn?: Array<Gender> | undefined;
 
   @NestJsGraphQL.Field(() => NestedEnumGenderFilter, { nullable: true })
   not?: NestedEnumGenderFilter | undefined;

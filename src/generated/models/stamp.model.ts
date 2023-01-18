@@ -1,9 +1,8 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { ErrorType } from "../enums/ErrorType.enum";
-import { MealType } from "../enums/MealType.enum";
 import { Place } from "../models/place.model";
+import { ErrorType, MealType } from "@prisma/client";
 
-@NestJsGraphQL.ObjectType('Stamp', { isAbstract: true })
+@NestJsGraphQL.ObjectType("Stamp", { isAbstract: true })
 export class Stamp {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int)
   id!: number;
@@ -11,10 +10,10 @@ export class Stamp {
   @NestJsGraphQL.Field(() => String)
   count!: string;
 
-  @NestJsGraphQL.Field(() => MealType)
+  @NestJsGraphQL.Field(() => String)
   mealType!: "breakfast" | "lunch" | "dinner" | "night";
 
-  @NestJsGraphQL.Field(() => ErrorType)
+  @NestJsGraphQL.Field(() => String)
   errorType!: "notFound" | "alreadyExists";
 
   place?: Place | null;

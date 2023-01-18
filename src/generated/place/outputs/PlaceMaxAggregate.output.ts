@@ -1,7 +1,7 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
 import { Gender } from "@prisma/client";
 
-@NestJsGraphQL.ObjectType('PlaceMaxAggregate', { isAbstract: true })
+@NestJsGraphQL.ObjectType("PlaceMaxAggregate", { isAbstract: true })
 export class PlaceMaxAggregate {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })
   id!: number | null;
@@ -9,6 +9,6 @@ export class PlaceMaxAggregate {
   @NestJsGraphQL.Field(() => String, { nullable: true })
   name!: string | null;
 
-  @NestJsGraphQL.Field(() => Gender, { nullable: true })
+  @NestJsGraphQL.Field(() => String, { nullable: true })
   gender!: "man" | "woman" | null;
 }

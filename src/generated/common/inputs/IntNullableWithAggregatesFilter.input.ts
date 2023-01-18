@@ -3,7 +3,7 @@ import { NestedFloatNullableFilter } from "./NestedFloatNullableFilter.input";
 import { NestedIntNullableFilter } from "./NestedIntNullableFilter.input";
 import { NestedIntNullableWithAggregatesFilter } from "./NestedIntNullableWithAggregatesFilter.input";
 
-@NestJsGraphQL.InputType('IntNullableWithAggregatesFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("IntNullableWithAggregatesFilter", { isAbstract: true })
 export class IntNullableWithAggregatesFilter {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })
   equals?: number | undefined;

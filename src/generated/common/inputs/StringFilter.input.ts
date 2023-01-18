@@ -1,7 +1,7 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
 import { NestedStringFilter } from "./NestedStringFilter.input";
 
-@NestJsGraphQL.InputType('StringFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("StringFilter", { isAbstract: true })
 export class StringFilter {
   @NestJsGraphQL.Field(() => String, { nullable: true })
   equals?: string | undefined;

@@ -1,18 +1,18 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { ErrorType } from "../enums";
 import { NestedEnumErrorTypeFilter } from "./NestedEnumErrorTypeFilter.input";
 import { NestedIntFilter } from "./NestedIntFilter.input";
+import { ErrorType } from "@prisma/client";
 
-@NestJsGraphQL.InputType('NestedEnumErrorTypeWithAggregatesFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("NestedEnumErrorTypeWithAggregatesFilter", { isAbstract: true })
 export class NestedEnumErrorTypeWithAggregatesFilter {
-  @NestJsGraphQL.Field(() => ErrorType, { nullable: true })
-  equals?: "notFound" | "alreadyExists" | undefined;
+  @NestJsGraphQL.Field(() => String, { nullable: true })
+  equals?: ErrorType | undefined;
 
-  @NestJsGraphQL.Field(() => [ErrorType], { nullable: true })
-  in?: Array<"notFound" | "alreadyExists"> | undefined;
+  @NestJsGraphQL.Field(() => [String], { nullable: true })
+  in?: Array<ErrorType> | undefined;
 
-  @NestJsGraphQL.Field(() => [ErrorType], { nullable: true })
-  notIn?: Array<"notFound" | "alreadyExists"> | undefined;
+  @NestJsGraphQL.Field(() => [String], { nullable: true })
+  notIn?: Array<ErrorType> | undefined;
 
   @NestJsGraphQL.Field(() => NestedEnumErrorTypeWithAggregatesFilter, { nullable: true })
   not?: NestedEnumErrorTypeWithAggregatesFilter | undefined;

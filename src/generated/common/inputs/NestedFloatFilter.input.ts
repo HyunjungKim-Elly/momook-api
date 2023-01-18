@@ -1,6 +1,6 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
 
-@NestJsGraphQL.InputType('NestedFloatFilter', { isAbstract: true })
+@NestJsGraphQL.InputType("NestedFloatFilter", { isAbstract: true })
 export class NestedFloatFilter {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Float, { nullable: true })
   equals?: number | undefined;

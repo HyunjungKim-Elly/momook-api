@@ -1,14 +1,14 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { ErrorType, MealType } from "../../common/enums";
+import { ErrorType, MealType } from "@prisma/client";
 
-@NestJsGraphQL.InputType('StampCreateWithoutPlaceInput', { isAbstract: true })
+@NestJsGraphQL.InputType("StampCreateWithoutPlaceInput", { isAbstract: true })
 export class StampCreateWithoutPlaceInput {
   @NestJsGraphQL.Field(() => String)
   count!: string;
 
-  @NestJsGraphQL.Field(() => MealType, { nullable: true })
+  @NestJsGraphQL.Field(() => String, { nullable: true })
   mealType?: "breakfast" | "lunch" | "dinner" | "night" | undefined;
 
-  @NestJsGraphQL.Field(() => ErrorType, { nullable: true })
-  errorType?: "notFound" | "alreadyExists" | undefined;
+  @NestJsGraphQL.Field(() => String, { nullable: true })
+  errorType?: ErrorType | undefined;
 }

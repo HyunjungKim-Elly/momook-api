@@ -1,7 +1,7 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { Gender } from "../../common/enums";
+import { Gender } from "@prisma/client";
 
-@NestJsGraphQL.InputType('PlaceCreateManyInput', { isAbstract: true })
+@NestJsGraphQL.InputType("PlaceCreateManyInput", { isAbstract: true })
 export class PlaceCreateManyInput {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })
   id?: number | undefined;
@@ -9,6 +9,6 @@ export class PlaceCreateManyInput {
   @NestJsGraphQL.Field(() => String)
   name!: string;
 
-  @NestJsGraphQL.Field(() => Gender)
+  @NestJsGraphQL.Field(() => String)
   gender!: "man" | "woman";
 }

@@ -1,8 +1,8 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
-import { Gender } from "../enums";
+import { Gender } from "@prisma/client";
 
-@NestJsGraphQL.InputType('EnumGenderFieldUpdateOperationsInput', { isAbstract: true })
+@NestJsGraphQL.InputType("EnumGenderFieldUpdateOperationsInput", { isAbstract: true })
 export class EnumGenderFieldUpdateOperationsInput {
-  @NestJsGraphQL.Field(() => Gender, { nullable: true })
-  set?: "man" | "woman" | undefined;
+  @NestJsGraphQL.Field(() => String, { nullable: true })
+  set?: Gender | undefined;
 }

@@ -6,7 +6,7 @@ import { PlaceCountAggregate } from "./PlaceCountAggregate.output";
 import { PlaceMaxAggregate } from "./PlaceMaxAggregate.output";
 import { PlaceMinAggregate } from "./PlaceMinAggregate.output";
 
-@NestJsGraphQL.ObjectType('PlaceGroupBy', { isAbstract: true })
+@NestJsGraphQL.ObjectType("PlaceGroupBy", { isAbstract: true })
 export class PlaceGroupBy {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int)
   id!: number;
@@ -14,7 +14,7 @@ export class PlaceGroupBy {
   @NestJsGraphQL.Field(() => String)
   name!: string;
 
-  @NestJsGraphQL.Field(() => Gender)
+  @NestJsGraphQL.Field(() => String)
   gender!: "man" | "woman";
 
   @NestJsGraphQL.Field(() => PlaceCountAggregate, { nullable: true })

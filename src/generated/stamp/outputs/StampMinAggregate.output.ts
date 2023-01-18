@@ -1,7 +1,7 @@
 import * as NestJsGraphQL from "@nestjs/graphql";
 import { ErrorType, MealType } from "@prisma/client";
 
-@NestJsGraphQL.ObjectType('StampMinAggregate', { isAbstract: true })
+@NestJsGraphQL.ObjectType("StampMinAggregate", { isAbstract: true })
 export class StampMinAggregate {
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })
   id!: number | null;
@@ -9,10 +9,10 @@ export class StampMinAggregate {
   @NestJsGraphQL.Field(() => String, { nullable: true })
   count!: string | null;
 
-  @NestJsGraphQL.Field(() => MealType, { nullable: true })
+  @NestJsGraphQL.Field(() => String, { nullable: true })
   mealType!: "breakfast" | "lunch" | "dinner" | "night" | null;
 
-  @NestJsGraphQL.Field(() => ErrorType, { nullable: true })
+  @NestJsGraphQL.Field(() => String, { nullable: true })
   errorType!: "notFound" | "alreadyExists" | null;
 
   @NestJsGraphQL.Field(() => NestJsGraphQL.Int, { nullable: true })
